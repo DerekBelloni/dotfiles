@@ -1,10 +1,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+# Add to your .zshrc
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/night-owl.omp.json)"
 export PATH="/usr/local/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export C_INCLUDE_PATH=/opt/homebrew/opt/sdl2/include/SDL2
@@ -16,10 +14,8 @@ export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 alias jarvis-d='docker exec -it new-jarvis-web-1 bash'
 . "/Users/derekbelloni/.deno/env"
 
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # history setup
@@ -39,3 +35,6 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 
 alias cd="z"
+
+# Integrate fzf with zsh shell
+source <(fzf --zsh)

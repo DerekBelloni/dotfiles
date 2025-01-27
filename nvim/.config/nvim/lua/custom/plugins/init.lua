@@ -10,12 +10,12 @@ return {
 	},
 	-- Use a plugin manager like packer.nvim
 	{
-		"vague2k/vague.nvim",
+		"nlcodes/my_nvim_config",
 		config = function()
 			-- Set the background to dark mode
 			vim.o.background = "dark"
 			-- Apply the "vague" color scheme
-			vim.cmd.colorscheme("vague")
+			vim.cmd.colorscheme("srcery")
 		end,
 	},
 	{
@@ -56,5 +56,20 @@ return {
 				vim.keymap.set("n", "<C-n>", vim.cmd.NvimTreeToggle)
 			end,
 		},
+	},
+	{
+		"junegunn/fzf",
+		run = function()
+			vim.fn["fzf#install"]()
+		end,
+	},
+	{
+		"junegunn/fzf.vim",
+		config = function()
+			-- Optional: Add keybindings or custom configurations for fzf.vim
+			vim.keymap.set("n", "<leader>ff", ":Files<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fg", ":Rg<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fb", ":Buffers<CR>", { noremap = true, silent = true })
+		end,
 	},
 }
