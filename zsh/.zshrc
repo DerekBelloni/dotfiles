@@ -3,6 +3,7 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 # Add to your .zshrc
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/night-owl.omp.json)"
+
 export PATH="/usr/local/bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 export C_INCLUDE_PATH=/opt/homebrew/opt/sdl2/include/SDL2
@@ -11,6 +12,8 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$HOME/nvim-macos-arm64/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+export PATH=$PATH:$(go env GOPATH)/bin
+
 alias jarvis-d='docker exec -it new-jarvis-web-1 bash'
 . "/Users/derekbelloni/.deno/env"
 

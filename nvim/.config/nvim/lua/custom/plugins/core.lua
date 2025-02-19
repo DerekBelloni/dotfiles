@@ -10,12 +10,12 @@ return {
 	},
 	-- Use a plugin manager like packer.nvim
 	{
-		"nlcodes/my_nvim_config",
+		"EdenEast/nightfox.nvim",
 		config = function()
 			-- Set the background to dark mode
 			vim.o.background = "dark"
 			-- Apply the "vague" color scheme
-			vim.cmd.colorscheme("srcery")
+			vim.cmd.colorscheme("nightfox")
 		end,
 	},
 	{
