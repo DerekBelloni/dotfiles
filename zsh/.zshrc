@@ -39,5 +39,21 @@ eval "$(zoxide init zsh)"
 
 alias cd="z"
 
+# Add the new function and alias here
+jarvis_c() {
+  ports=(1433 5173 5174 6006 80 3306)
+  for port in "${ports[@]}"; do
+    pids=$(lsof -i :$port -t)
+    if [ -n "$pids" ]; then
+      echo "Killing processes using port $port: $pids"
+      kill -9 $pids
+    else
+      echo "No processes using port $port"
+    fi
+  done
+}
+
+alias jarvis-c=jarvis_c
+
 # Integrate fzf with zsh shell
 source <(fzf --zsh)

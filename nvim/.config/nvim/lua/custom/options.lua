@@ -2,11 +2,11 @@
 local options = {
 	relativenumber = true,
 	number = true,
-	tabstop = 2,
-	shiftwidth = 2,
+	tabstop = 4,
+	shiftwidth = 4,
 	expandtab = true,
 	-- You might also want these related settings:
-	softtabstop = 2, -- Number of spaces a tab counts for while editing
+	softtabstop = 4, -- Number of spaces a tab counts for while editing
 	smartindent = true, -- Insert indents automatically
 }
 -- Apply all the options
