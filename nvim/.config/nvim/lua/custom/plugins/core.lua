@@ -66,10 +66,27 @@ return {
 	{
 		"junegunn/fzf.vim",
 		config = function()
-			-- Optional: Add keybindings or custom configurations for fzf.vim
+			-- File navigation
 			vim.keymap.set("n", "<leader>ff", ":Files<CR>", { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>fg", ":Rg<CR>", { noremap = true, silent = true })
 			vim.keymap.set("n", "<leader>fb", ":Buffers<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fh", ":Files ~<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fr", ":Files ./<CR>", { noremap = true, silent = true })
+
+			-- Text search
+			vim.keymap.set("n", "<leader>fg", ":Rg<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fl", ":BLines<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fs", ":Rg <C-R><C-W><CR>", { noremap = true, silent = true })
+
+			-- History and commands
+			vim.keymap.set("n", "<leader>fo", ":History<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fc", ":History:<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fm", ":Marks<CR>", { noremap = true, silent = true })
+
+			-- Git integration
+			vim.keymap.set("n", "<leader>gf", ":GFiles<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>gs", ":GFiles?<CR>", { noremap = true, silent = true })
+
+			vim.g.fzf_preview_window = { "right:50%", "ctrl-/" }
 		end,
 	},
 }
