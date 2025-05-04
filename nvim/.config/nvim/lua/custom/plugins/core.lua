@@ -51,6 +51,7 @@ return {
 					},
 					filters = {
 						dotfiles = false,
+						custom = { "^\\.git$" },
 					},
 				})
 				vim.keymap.set("n", "<C-n>", vim.cmd.NvimTreeToggle)

@@ -150,6 +150,24 @@ return {
 					},
 				},
 			})
+			-- YAML LSP setup
+			require("lspconfig").yamlls.setup({
+				settings = {
+					yaml = {
+						format = {
+							enable = true, -- Enable formatting
+							singleQuote = true, -- Prefer single quotes
+							printWidth = 80, -- Line length
+						},
+						validate = true, -- Enable validation
+						hover = true, -- Enable hover information
+						completion = true, -- Enable autocompletion
+						schemas = {
+							["https://json.schemastore.org/docker-compose.json"] = "docker-compose*.{yml,yaml}", -- Schema for Docker Compose
+						},
+					},
+				},
+			})
 		end,
 	},
 }
