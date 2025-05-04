@@ -50,7 +50,7 @@ return {
 						},
 					},
 					filters = {
-						dotfiles = true,
+						dotfiles = false,
 					},
 				})
 				vim.keymap.set("n", "<C-n>", vim.cmd.NvimTreeToggle)
