@@ -168,6 +168,34 @@ return {
 					},
 				},
 			})
+			-- HTML LSP setup
+			require("lspconfig").html.setup({
+				cmd = { "vscode-html-language-server", "--stdio" },
+				filetypes = { "html" },
+				settings = {
+					html = {
+						format = {
+							enable = true, -- Enable formatting
+							templating = true, -- Support for templating (e.g., Laravel Blade, if used)
+							wrapLineLength = 80, -- Match your YAML printWidth
+							indentInnerHtml = true, -- Indent <head> and <body>
+							preserveNewLines = true,
+						},
+						hover = {
+							documentation = true, -- Show documentation on hover
+							references = true, -- Show references on hover
+						},
+						completion = {
+							attributeDefaultValue = "doublequotes", -- Use double quotes for attributes
+						},
+					},
+				},
+				on_attach = function(client, bufnr)
+					-- Consistent with your other LSPs, add custom keybindings here if desired
+					print("HTML LSP attached to buffer " .. bufnr)
+				end,
+				capabilities = vim.lsp.protocol.make_client_capabilities(), -- Basic LSP capabilities
+			})
 		end,
 	},
 }
