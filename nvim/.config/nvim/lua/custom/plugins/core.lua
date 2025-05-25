@@ -34,7 +34,7 @@ return {
 						width = 30,
 					},
 					renderer = {
-						group_empty = true,
+						group_empty = false,
 						icons = {
 							webdev_colors = true,
 							git_placement = "before",
